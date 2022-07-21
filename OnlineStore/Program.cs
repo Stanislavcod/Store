@@ -42,12 +42,12 @@ using (ApplicationContext db = new ApplicationContext(options))
 
     var productSuppliers = db.ProductSuppliersGroup.ToList();
     foreach (var item in productSuppliers)
-        Console.WriteLine($"Название продукта: {item.ProductName}, Цена: {item.ProductPrice}, Имя поставщика: {item.SupplierName}");
+        Console.WriteLine($"Product Name: {item.ProductName}, Price: {item.ProductPrice}, Supplier Name: {item.SupplierName}");
 
     //Using the Include method
     // Get data about phones by uploading users
     var phones = db.Phones.Include(i => i.User).ToList();
     foreach (var item in phones)
-        Console.WriteLine($"Логин пользователя: {item.UserLogin}. Телефон: {item.PhoneNumber}");
+        Console.WriteLine($"User login: {item.UserLogin}. Phone number: {item.PhoneNumber}");
 
 }
